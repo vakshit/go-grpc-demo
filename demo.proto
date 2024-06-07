@@ -1,0 +1,32 @@
+syntax = "proto3";
+option go_package = "grpc-demo/demo";
+
+message Amount {
+  int64 amount = 1;
+  string currency = 2;
+}
+
+
+message DemoRequest {
+  Amount amount = 1;
+  string from = 2;
+  string to = 3;
+}
+
+message DemoResponse {
+  string pdf = 1;
+  Amount docx = 2;
+}
+
+message DeluluRequest {
+  string how_much = 1;
+  string delulu = 2;
+}
+
+
+
+service Demo {
+  rpc Create(DemoRequest) returns (DemoResponse);
+  rpc Delulu(DeluluRequest) returns (DeluluRequest);
+}
+

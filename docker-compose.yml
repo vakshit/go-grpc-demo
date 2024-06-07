@@ -1,0 +1,11 @@
+name: grp-demo
+
+services:
+  grpc-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: grpc-demo:latest
+    ports:
+      - 8080:8080
+    restart: no
